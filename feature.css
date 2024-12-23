@@ -1,0 +1,312 @@
+.navbar {
+  position: absolute; /* Para permitir centralização na página */
+  top: 10px; /* Define a distância do topo */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento para centralizar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9932cc; /* Cor de fundo azul */
+  color: black;
+  padding: 0.5rem 2rem; /* Menor altura */
+  border-radius: 25px; /* Torna o navbar arredondado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+  z-index: 10; /* Garante que ele esteja acima de outros elementos */
+
+  h2 {
+    margin: 0;
+    font-size: 1.0rem;
+    margin-right: 1rem; /* Espaço entre o título e os itens */
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0 0.5rem; /* Espaço entre os itens */
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.3s, color 0.3s;
+      padding: 0.3rem 0.8rem; /* Adiciona espaço interno aos itens */
+      border-radius: 15px; /* Arredonda os itens */
+
+      &:hover {
+        background-color: darkgrey; /* Cor de fundo ao passar o mouse */
+        color: #000; /* Texto preto ao passar o mouse */
+      }
+    }
+  }
+}
+
+/* Responsividade para ajustar o tamanho do navbar em telas menores */
+@media (max-width: 768px) {
+  .navbar {
+    width: 90%;
+    padding: 0.5rem;
+  }
+
+  ul li {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte em telas pequenas */
+  }
+}
+
+.logo img {
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 1100px; /* Tamanho máximo maior */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Remove espaços em torno da imagem */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  border-radius: 10px; /* Adiciona cantos levemente arredondados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+  margin: 50px auto;
+}
+
+.buttom {
+  display: flex; /* Para facilitar a centralização */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  margin: 20px 0; /* Adiciona espaço acima e abaixo */
+
+  button {
+    background-color: gray; /* Roxo */
+    color: white; /* Cor do texto */
+    font-size: 0.8rem; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Torna o botão completamente arredondado */
+    cursor: pointer; /* Mostra o ícone de clique ao passar o mouse */
+    transition: background-color 0.3s ease; /* Animação para mudança de cor */
+
+    &:hover {
+      background-color: cornflowerblue; /* Tom mais claro de roxo ao passar o mouse */
+    }
+  }
+}
+
+.portfolio {
+  text-align: center;
+  margin: 40px 0;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .portfolio-carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .carousel-item {
+      min-width: 100%;
+      flex: 0 0 33.33%; /* Exibe 3 itens por vez */
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+
+      portfolio img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  }
+
+  .carousel-controls {
+    margin-top: 10px;
+
+    button {
+      background-color: #800080; /* Roxo */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      margin: 0 5px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #9932cc; /* Tom mais claro */
+      }
+    }
+  }
+}
+
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carousel-button {
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+.clients {
+  text-align: center;
+  padding: 40px;
+  background-color: #f8f9fc;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .clients-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    .client-item {
+      max-width: 400px;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 2px solid #9932cc; /* Roxo */
+      }
+
+      p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-style: italic;
+      }
+
+      span {
+        display: block;
+        font-size: 0.9rem;
+        color: #777;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.Follow us ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.Followus li {
+  display: inline-block;
+}
+
+.Followus img {
+  width: 40px;  /* Tamanho pequeno */
+  height: 40px; /* Tamanho pequeno */
+  border-radius: 50%; /* Tornar os ícones redondos */
+  object-fit: cover;  /* Garantir que a imagem preencha o círculo sem distorcer */
+  transition: transform 0.3s ease;
+}
+
+.Followus img:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Estilo do container principal */
+.hoover {
+  display: flex;  /* Usando Flexbox para colocar os itens lado a lado */
+  justify-content: space-between;  /* Espaço entre as colunas */
+  align-items: flex-start;  /* Alinha os itens no topo */
+  padding: 20px;
+  background-color: #333;  /* Fundo do rodapé */
+  color: #fff;  /* Cor do texto */
+}
+
+.quick-links, .contact-us, .follow-us {
+  flex: 1;  /* Cada coluna ocupa uma quantidade igual de espaço */
+  margin: 0 15px;  /* Espaçamento entre as colunas */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Estilo para os ícones sociais */
+.follow-us img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.follow-us img:hover {
+  transform: scale(1.1);  /* Efeito de zoom nos ícones ao passar o mouse */
+}
+
+/* Responsividade: em telas menores, as colunas ainda ficarão lado a lado */
+@media (max-width: 768px) {
+  .hoover {
+      flex-wrap: wrap;  /* Permite que as colunas se movam para a linha seguinte se necessário */
+      justify-content: center;
+  }
+
+  .quick-links, .contact-us, .follow-us {
+      flex: 0 1 30%;  /* Ajusta o tamanho das colunas em telas menores */
+      text-align: center;
+  }
+
+  .follow-us img {
+      margin-right: 10px;
+  }
+}
